@@ -425,6 +425,26 @@ a{color:inherit;text-decoration:none}
 .tex-bottom .tex-name{font-size:.85rem;color:var(--grey);font-weight:500;margin-bottom:4px}
 .tex-bottom .tex-use{font-size:.75rem;color:var(--dim);font-weight:300}
 
+/* ═══ OUTFITS ═══ */
+.outfit-tabs{display:flex;gap:0;margin-bottom:32px;border-bottom:1px solid var(--line)}
+.outfit-tab{
+  padding:12px 24px;font-family:var(--font-subtitle);font-size:1.4rem;letter-spacing:.08em;
+  color:var(--muted);background:none;border:none;cursor:pointer;transition:color .3s,border-color .3s;
+  border-bottom:2px solid transparent;position:relative;bottom:-1px
+}
+.outfit-tab.active{color:var(--red);border-bottom-color:var(--red)}
+.outfit-tab:hover{color:var(--white)}
+.outfit-panel{display:none}
+.outfit-panel.active{display:grid}
+.outfit-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px
+}
+.outfit-grid img{
+  width:100%;height:340px;object-fit:cover;border-radius:6px;
+  border:1px solid rgba(255,255,255,.04);opacity:.85;transition:opacity .3s,transform .3s
+}
+.outfit-grid img:hover{opacity:1;transform:scale(1.02)}
+
 .ref-list{list-style:none;margin-top:28px;border-top:1px solid var(--line)}
 .ref-list li{
   font-size:.9rem;color:rgba(240,240,240,.65);font-weight:300;
@@ -707,7 +727,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="#"><img src="assets/logo-reckless.png" alt="Reckless" class="nav-logo-img"></a>
+  <a href="#"><img src="assets/logo-symbol.png" alt="Reckless" class="nav-logo-img"></a>
   <ul class="nav-links">
     <li><a href="#vision">VISIÓN</a></li>
     <li><a href="#storyworld">STORYWORLD</a></li>
@@ -781,6 +801,11 @@ a{color:inherit;text-decoration:none}
       <div class="index-num">08</div>
       <div class="index-name">Mood & Texturas</div>
       <div class="index-desc">Moodboard · Overlays · Acentos</div>
+    </a>
+    <a href="#outfits" class="index-item">
+      <div class="index-num">09</div>
+      <div class="index-name">Outfits</div>
+      <div class="index-desc">Casual · Evento · Tarima</div>
     </a>
   </div>
 </div>
@@ -1062,14 +1087,55 @@ a{color:inherit;text-decoration:none}
   <p style="font-size:.95rem;line-height:1.85;color:rgba(240,240,240,.7);font-weight:300;max-width:600px;margin-bottom:32px">Las texturas del universo Reckless funcionan como capas visuales que refuerzan el mood cinemático y nocturno. Se aplican como fondos, overlays, y acentos — nunca como protagonistas.</p>
 
   <div class="texture-scroll">
-    <div class="tex-card"><div class="tex-top"><img src="assets/ref1.jpg" alt="Humo" loading="lazy"><span class="tex-num">01</span></div><div class="tex-bottom"><p class="tex-name">Humo rojo/negro (marble)</p><p class="tex-use">Fondos, overlays</p></div></div>
-    <div class="tex-card"><div class="tex-top"><img src="assets/ref2.jpg" alt="Pelaje" loading="lazy"><span class="tex-num">02</span></div><div class="tex-bottom"><p class="tex-name">Pelaje/tigre rojo</p><p class="tex-use">Detalles, acentos, merch</p></div></div>
-    <div class="tex-card"><div class="tex-top"><img src="assets/tex-animal.png" alt="Animal Print" loading="lazy"><span class="tex-num">03</span></div><div class="tex-bottom"><p class="tex-name">Animal print rojo</p><p class="tex-use">Acentos, merch, stories</p></div></div>
+    <div class="tex-card"><div class="tex-top"><img src="assets/tex1.png" alt="Drip" loading="lazy"><span class="tex-num">01</span></div><div class="tex-bottom"><p class="tex-name">Drip negro iridiscente</p><p class="tex-use">Overlays, transiciones</p></div></div>
+    <div class="tex-card"><div class="tex-top"><img src="assets/ref1.jpg" alt="Humo" loading="lazy"><span class="tex-num">02</span></div><div class="tex-bottom"><p class="tex-name">Humo rojo/negro (marble)</p><p class="tex-use">Fondos, overlays</p></div></div>
+    <div class="tex-card"><div class="tex-top"><img src="assets/ref2.jpg" alt="Pelaje" loading="lazy"><span class="tex-num">03</span></div><div class="tex-bottom"><p class="tex-name">Pelaje/tigre rojo</p><p class="tex-use">Detalles, acentos, merch</p></div></div>
     <div class="tex-card"><div class="tex-top"><img src="assets/tex2.png" alt="Graffiti" loading="lazy"><span class="tex-num">04</span></div><div class="tex-bottom"><p class="tex-name">Graffiti negro/azul</p><p class="tex-use">Fondos urbanos, stories</p></div></div>
     <div class="tex-card"><div class="tex-top"><img src="assets/tex3.png" alt="Gemas" loading="lazy"><span class="tex-num">05</span></div><div class="tex-bottom"><p class="tex-name">Gemas/rubíes rojos</p><p class="tex-use">Highlights, portadas</p></div></div>
-    <div class="tex-card"><div class="tex-top"><img src="assets/tex4.png" alt="Chrome" loading="lazy"><span class="tex-num">06</span></div><div class="tex-bottom"><p class="tex-name">Chrome/metal líquido</p><p class="tex-use">Acentos premium, tipografía 3D</p></div></div>
-    <div class="tex-card"><div class="tex-top"><img src="assets/tex6.png" alt="Estrella" loading="lazy"><span class="tex-num">07</span></div><div class="tex-bottom"><p class="tex-name">Estrella azul inflada</p><p class="tex-use">Referencia iconografía 3D</p></div></div>
-    <div class="tex-card"><div class="tex-top"><img src="assets/tex1.png" alt="Drip" loading="lazy"><span class="tex-num">08</span></div><div class="tex-bottom"><p class="tex-name">Drip negro iridiscente</p><p class="tex-use">Overlays, transiciones</p></div></div>
+    <div class="tex-card"><div class="tex-top"><img src="assets/tex6.png" alt="Estrella" loading="lazy"><span class="tex-num">06</span></div><div class="tex-bottom"><p class="tex-name">Estrella azul inflada</p><p class="tex-use">Referencia iconografía 3D</p></div></div>
+  </div>
+</section>
+
+<!-- ═══ OUTFITS ═══ -->
+<section id="outfits" class="sec reveal">
+  <div class="sec-tag"><span class="tag-num">09</span><span class="tag-line"></span><span class="tag-label">OUTFITS</span></div>
+  <h2 class="sec-title">Outfits</h2>
+
+  <div class="outfit-tabs">
+    <button class="outfit-tab active" data-tab="casual">CASUAL</button>
+    <button class="outfit-tab" data-tab="evento">EVENTO</button>
+    <button class="outfit-tab" data-tab="tarima">TARIMA</button>
+  </div>
+
+  <div id="panel-casual" class="outfit-panel active">
+    <div class="outfit-grid">
+      <img src="assets/outfit-casual-1.png" alt="Casual 1" loading="lazy">
+      <img src="assets/outfit-casual-2.webp" alt="Casual 2" loading="lazy">
+      <img src="assets/outfit-casual-3.jpg" alt="Casual 3" loading="lazy">
+      <img src="assets/outfit-casual-4.jpg" alt="Casual 4" loading="lazy">
+    </div>
+  </div>
+
+  <div id="panel-evento" class="outfit-panel">
+    <div class="outfit-grid">
+      <img src="assets/outfit-evento-1.jpg" alt="Evento 1" loading="lazy">
+      <img src="assets/outfit-evento-2.webp" alt="Evento 2" loading="lazy">
+      <img src="assets/outfit-evento-3.jpg" alt="Evento 3" loading="lazy">
+      <img src="assets/outfit-evento-4.webp" alt="Evento 4" loading="lazy">
+    </div>
+  </div>
+
+  <div id="panel-tarima" class="outfit-panel">
+    <div class="outfit-grid">
+      <img src="assets/outfit-tarima-1.jpg" alt="Tarima 1" loading="lazy">
+      <img src="assets/outfit-tarima-2.webp" alt="Tarima 2" loading="lazy">
+      <img src="assets/outfit-tarima-3.jpg" alt="Tarima 3" loading="lazy">
+      <img src="assets/outfit-tarima-4.webp" alt="Tarima 4" loading="lazy">
+      <img src="assets/outfit-tarima-5.jpg" alt="Tarima 5" loading="lazy">
+      <img src="assets/outfit-tarima-6.jpg" alt="Tarima 6" loading="lazy">
+      <img src="assets/outfit-tarima-7.jpg" alt="Tarima 7" loading="lazy">
+      <img src="assets/outfit-tarima-8.jpg" alt="Tarima 8" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -1087,6 +1153,16 @@ a{color:inherit;text-decoration:none}
 // Reveal on scroll
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})},{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// Outfit tabs
+document.querySelectorAll('.outfit-tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.outfit-tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.outfit-panel').forEach(p=>p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+  });
+});
 
 // Nav hide on scroll down
 let last=0;const nav=document.querySelector('.nav');
